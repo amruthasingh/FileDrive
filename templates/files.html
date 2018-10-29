@@ -1,0 +1,80 @@
+{% extends "layout_bk.html" %}
+{% block title %}S3 Object List{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="col-12-xs">
+    <center> <h3><font size="5" color="black">File Drive</font></h3></center>
+
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <p class="bg-info" style="padding: 15px;">
+          {% for message in messages %}
+            {{ message }}<br>
+          {% endfor %}
+          </p>
+        {% endif %}
+      {% endwith %}
+
+<body style = "background: url(https://s3-us-west-2.amazonaws.com/myproject-amrutha/configurations/background-files.png); background-size: 100%;"> </body>
+
+      <form class="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+        <p><input type="file" name="file"></p>
+<dt>Description:</dt>
+<dd><input type=text name=description value="{{
+          request.form.description }}">
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </form>
+<hr>     
+      <table class="table table-striped">
+        <tr>
+          <th>Filename</th>
+          <th>Description</th>
+          <th>Upload Time</th>
+          <th>Updated Time</th>
+          <th>First Name</th>
+	  <th>Last Name</th>
+          <th>Type</th>
+          <th>Delete</th>
+	  <th>Download</th>
+          <th>Update</th>
+        </tr>
+        {% for f in files %}
+        <tr>
+          <td>{{ f.key }}</td>
+          <td>{{ f.desc }}</td>
+          <td>{{ f.upload }}</td>
+          <td>{{ f.update }}</td>
+          <td>{{ f.firstname}}</td>
+          <td>{{ f.lastname}}</td>
+          <td>{{ f.key | file_type }}</td>
+          <td class="td-buttons">
+            <form class="delete-form" action="{{ url_for('delete') }}" method="POST">
+              <input type="hidden" name="key" value="{{ f.key }}">
+              <button type="submit" class="btn btn-danger btn-sm">
+                <i class="fa fa-trash-alt"></i>
+              </button>
+            </form>
+	  </td>
+	  <td class="td-buttons">
+            <form class="download-form" action="{{ url_for('download') }}" method="POST">
+              <input type="hidden" name="key" value="{{ f.key }}">
+              <button type="submit" class="btn btn-default btn-sm">
+                <i class="fa fa-download"></i>
+              </button>
+            </form>
+          </td>
+          <td class="td-buttons">
+            <form class="edit-form" action="{{ url_for('download') }}" method="POST">
+              <input type="hidden" name="key" value="{{ f.key }}">
+              <button type="submit" class="btn btn-default btn-sm" title="Download, Edit and Upload the file">
+                <i class="fa fa-edit"></i>
+              </button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+{% endblock %}

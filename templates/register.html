@@ -1,0 +1,26 @@
+{% extends "layout_bk.html" %}
+{% block body %}
+<body style = "background: url(https://s3-us-west-2.amazonaws.com/myproject-amrutha/configurations/register_background.png); background-size: 100%;"> </body>
+<body>
+   <div class = "container" align="center">
+        <h1>Register</h1>
+        {% from "_formhelpers.html" import render_field %}
+        <form method=post action"/register/">
+            <dl>
+                {{render_field(form.username)}}
+		{{render_field(form.firstname)}}
+		{{render_field(form.lastname)}}
+                {{render_field(form.email)}}
+                {{render_field(form.password)}}
+                {{render_field(form.confirm)}}
+            </dl>
+            <p><font size="3"> <input type=submit value=Register></font></p>
+        </form>
+
+        {% if error %}
+           <p class="error"><strong>Error:</strong>{{error}}</p>
+        {% endif %}
+    </div>
+</body>
+
+{% endblock %}

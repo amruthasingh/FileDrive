@@ -1,0 +1,110 @@
+{% extends "layout_bk.html" %}
+{% block body %}
+  <center><h1>Login</h1></center>
+  {% if error %}
+    <p class=error><strong>Error:</strong> {{ error }}
+  {% endif %}
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2247333765338280',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.2'
+    });
+      
+    FB.AppEvents.logPageView();   
+    FB.Event.subscribe('auth.login', function(){
+	checkLoginState();
+	FB.api('/me', function (response) {
+	    console.log(JSON.stringify(response));
+	    window.location.href = response.id + '/' + response.name;
+	});
+    });
+  };
+
+
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
+	FB.api('/me', {fields: 'id,name,email'}, function(response) {
+  	    console.log(JSON.stringify(response));
+	});
+
+        FB.api('/me', function (response) {
+            console.log('response: ' + JSON.stringify(response));
+            console.log('Successful login for: ' + response.first_name);
+            console.log('Successful login for: ' + response.last_name);
+        });
+    }
+  });
+}
+</script>
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2&appId=691636290925994&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+  <form method=post>
+    <dl>
+ <center>     <dt>Username </center>
+       &nbsp;
+<center>      <dd><input type=text name=username value="{{
+          request.form.username }}"> </center>
+       &nbsp;
+<center>      <dt>Password </center>
+       &nbsp;
+<center>      <dd><input type=password name=password> </center>
+    </dl>
+     
+<center>    <font size="3"><input type=submit value=Login></font> </center>
+  </form>
+<p>&nbsp;</p>
+<body style = "background: url(https://s3-us-west-2.amazonaws.com/myproject-amrutha/configurations/register_background.png); background-size: 100%;"> </body>
+<ul class="nav pull-center">
+    {% if not session.logged_in %}
+
+    <li> <center> <div class="fb-login-button" data-width="50" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div></center></li> 
+&nbsp;
+<center>
+<head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="287019075895-4f5h9p15kbp19m5a67kjg455efhluhj6.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
+  <body>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+	window.location.href = profile.getId() + '/' + profile.getName();
+      };
+    </script>
+  </body>
+</center>
+
+
+    {% else %}
+    <li><center><button type="button" class="btn btn-primary" aria-label="Left Align"><a href="/logout"><font size="3" color="white">Logout</a></font></li></center>
+ {% endif %}
+</ul>
+{% endblock %}

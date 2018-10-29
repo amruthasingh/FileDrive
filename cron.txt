@@ -1,0 +1,1 @@
+*/1 * * * * /root/filedrive-prod/run.sh & >> /root/filedrive-prod/app.log 2>&1
