@@ -27,8 +27,7 @@ It is integrated with facebook and google for the ease of logging in via social 
 
 Architecture Diagram:
 
- ![image](https://user-images.githubusercontent.com/42703827/47670384-437bc000-db6a-11e8-9b48-1c6d3a9eb8ad.png)
-
+ ![project1-filedrive 2](https://user-images.githubusercontent.com/42703827/47680694-cc075a00-db84-11e8-89a8-23d020b3fe63.png)
 
 Instructions to run the application: 
 
