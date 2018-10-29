@@ -1,0 +1,54 @@
+MySQL [filedrivedb]> show tables;
++-----------------------+
+| Tables_in_filedrivedb |
++-----------------------+
+| userfiles             |
+| users                 |
++-----------------------+
+2 rows in set (0.00 sec)
+
+MySQL [filedrivedb]> select * from userfiles;
++----+-----------------------+--------------+----------+-------------------------------------+---------------------+---------------------+-------------------------+
+| id | username              | firstname    | lastname | filepath                            | uploadtime          | updatedtime         | description             |
++----+-----------------------+--------------+----------+-------------------------------------+---------------------+---------------------+-------------------------+
+|  1 | admin                 | admin        | admin    | admin/admin_jai.png                 | 2018-10-28 20:08:50 | 2018-10-29 04:39:51 | test                    |
+|  3 | 105771519743338474287 | Jai          | Prakash  | 105771519743338474287/admin_jai.png | 2018-10-28 20:12:32 | 2018-10-28 20:12:32 | google                  |
+|  4 | testuser              | test         | user     | testuser/HappyFace.jpg              | 2018-10-29 05:32:12 | 2018-10-29 05:32:12 | Happy Face              |
+|  5 | testuser              | test         | user     | testuser/Eiffel.jpg                 | 2018-10-29 08:09:31 | 2018-10-29 08:09:31 | test file               |
+|  6 | amruthasingh          | amruthasingh | singh    | amruthasingh/Sheep.jpg              | 2018-10-29 09:11:40 | 2018-10-29 09:11:40 | sheep image             |
+|  7 | 2473837889307947      | Amrutha      | Singh    | 2473837889307947/HappyFace.jpg      | 2018-10-29 09:23:11 | 2018-10-29 12:19:56 | fb user                 |
+|  8 | 107410927785068407356 | Amrutha      | Singh    | 107410927785068407356/HappyFace.jpg | 2018-10-29 09:24:07 | 2018-10-29 09:24:07 | Google user             |
+|  9 | admin                 | admin        | admin    | admin/admin_test1 (1).jpg           | 2018-10-29 09:25:24 | 2018-10-29 09:25:24 |                         |
+| 10 | 2473837889307947      | Amrutha      | Singh    | 2473837889307947/Sheep.jpg          | 2018-10-29 09:26:30 | 2018-10-29 12:19:41 | uploaded by fb user     |
+| 11 | demouser              | demo         | user     | demouser/HappyFace.jpg              | 2018-10-29 09:54:44 | 2018-10-29 09:54:44 | happy face              |
+| 12 | demouser              | demo         | user     | demouser/helloworld.txt             | 2018-10-29 09:56:55 | 2018-10-29 09:58:33 | updated file            |
+| 14 | 107410927785068407356 | Amrutha      | Singh    | 107410927785068407356/Eiffel.jpg    | 2018-10-29 10:11:16 | 2018-10-29 12:16:06 | test                    |
+| 15 | 107410927785068407356 | Amrutha      | Singh    | 107410927785068407356/Sheep.jpg     | 2018-10-29 10:12:19 | 2018-10-29 12:17:52 | uploaded by google user |
+| 16 | ankita                | ankita       | singh    | ankita/HappyFace.jpg                | 2018-10-29 11:54:37 | 2018-10-29 11:54:37 | happy face              |
+| 17 | ankitha               | ankitha      | singh    | ankitha/Eiffel.jpg                  | 2018-10-29 11:56:50 | 2018-10-29 11:56:50 | Eiffel Tower            |
+| 18 | test1                 | test1        | user     | test1/Sheep.jpg                     | 2018-10-29 12:10:22 | 2018-10-29 12:10:22 | sheep                   |
+| 19 | test1                 | test1        | user     | test1/helloworld.txt                | 2018-10-29 12:11:52 | 2018-10-29 12:13:37 | updated file            |
++----+-----------------------+--------------+----------+-------------------------------------+---------------------+---------------------+-------------------------+
+17 rows in set (0.00 sec)
+
+MySQL [filedrivedb]> select * from users;
++-----+-----------------------+--------------+----------+----------+--------------------------+----------+--------------+
+| uid | username              | firstname    | lastname | password | email                    | settings | tracking     |
++-----+-----------------------+--------------+----------+----------+--------------------------+----------+--------------+
+|   1 | admin                 | admin        | admin    | admin    | admin@admin.com          | NULL     | /FILE DRIVE/ |
+|   2 | 2121494824561527      | Jai          | Prakash  |          |                          | NULL     | /FILE DRIVE/ |
+|   3 | 105771519743338474287 | Jai          | Prakash  |          |                          | NULL     | /FILE DRIVE/ |
+|   4 | 107410927785068407356 | Amrutha      | Singh    |          |                          | NULL     | /FILE DRIVE/ |
+|   5 | 2473837889307947      | Amrutha      | Singh    |          |                          | NULL     | /FILE DRIVE/ |
+|   7 | testuser              | test         | user     | testuser | testuser@gmail.com       | NULL     | /FILE DRIVE/ |
+|   8 | newuser               | new          | user     | newuser  | newuser@gmail.com        | NULL     | /FILE DRIVE/ |
+|   9 | amrutha               | amrutha      | singh    | amrutha  | amrutha@gmail.com        | NULL     | /FILE DRIVE/ |
+|  10 | amruthasingh          | amruthasingh | singh    | amrutha  | amruthasingh.b@gmail.com | NULL     | /FILE DRIVE/ |
+|  11 | demouser              | demo         | user     | demouser | demo@gmail.com           | NULL     | /FILE DRIVE/ |
+|  12 | ankita                | ankita       | singh    | ankita   | ankita@gmail.com         | NULL     | /FILE DRIVE/ |
+|  13 | ankitha               | ankitha      | singh    | ankitha  | ankitha@gmail.com        | NULL     | /FILE DRIVE/ |
+|  14 | test1                 | test1        | user     | test1    | test1@gmail.com          | NULL     | /FILE DRIVE/ |
++-----+-----------------------+--------------+----------+----------+--------------------------+----------+--------------+
+13 rows in set (0.00 sec)
+
+MySQL [filedrivedb]> 
