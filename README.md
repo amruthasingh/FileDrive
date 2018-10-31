@@ -44,7 +44,9 @@ For example:
 
 3.	If there are any cached errors while running the application, open an incognito browser on chrome, ensure that you are signed out from Facebook and Google and then access the application.
 
-4. Install dependencies: pip install -r requirements.txt
+4. Install dependencies: 
+    
+    pip install -r requirements.txt
 
 <b> Sample Demo Screenshots </b>
 
