@@ -30,13 +30,14 @@ It is integrated with facebook and google for the ease of logging in via social 
 <b> Instructions to run the application: </b>
 
 1.	FileDrive application runs on https. Please ensure that the application page is always on https. 
+
 For example:
 
- https://amruthasingh.info/login
+    https://amruthasingh.info/login
 
-https://amruthasingh.info/register
+    https://amruthasingh.info/register
 
-https://amruthasingh.info/files
+    https://amruthasingh.info/files
 
 
 2.	Before running the application, ensure that you are not logged into either Facebook or Google. If logged in, sign out and then access the application.
