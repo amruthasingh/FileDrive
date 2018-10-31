@@ -1,24 +1,21 @@
-Project 1 – File Drive
+<b> Project 1 – File Drive </b>
 
-University Name:  San Jose State University
+<b> University Name: San Jose State University </b>
 
 http://www.sjsu.edu/
  
-Course: 
-Cloud Technologies
+<b> Course: Cloud Technologies </b>
 
-Professor: 
-Sanjay Garje 
+<b> Professor: Sanjay Garje </b>
 
- ISA: 
-Anushri Srinath Aithal 
+<b> ISA: Anushri Srinath Aithal </b>
 
-Student: Amrutha Singh Balaji Singh
+<b> Student: Amrutha Singh Balaji Singh </b>
 
-LinkedIn: https://www.linkedin.com/in/amruthasinghb/
+<b> LinkedIn: </b> https://www.linkedin.com/in/amruthasinghb/
 
 
-Project Introduction
+<b> Project Introduction </b>
 
 FileDrive is a python-based file upload and storage web application. It is hosted on Amazon Web Services. It utilizes AWS Simple Storage Service which is an object storage service to store the user’s files.
 It can be used to upload, download, delete and update files with description. It records updated time, uploaded time, file type etc.
@@ -26,11 +23,11 @@ It also displays logged in user’s first name, lastname and username.
 It is integrated with facebook and google for the ease of logging in via social media. It also has a custom login and register page. It limits the file upload size to 10 MB. It uses content delivery network during the download to enhance the user performance and to reduce the latency. It is built using the APIs for different actions such as upload, download, delete. 
 
 
-Architecture Diagram:
+<b> Architecture Diagram: </b>
 
  ![project1-filedrive 2](https://user-images.githubusercontent.com/42703827/47680694-cc075a00-db84-11e8-89a8-23d020b3fe63.png)
 
-Instructions to run the application: 
+<b> Instructions to run the application: </b>
 
 1.	FileDrive application runs on https. Please ensure that the application page is always on https. 
 For example:
@@ -46,10 +43,9 @@ https://amruthasingh.info/files
 
 3.	If there are any cached errors while running the application, open an incognito browser on chrome, ensure that you are signed out from Facebook and Google and then access the application.
 
+4. Install dependencies: pip install -r requirements.txt
 
-
-Sample Demo Screenshots
-
+<b> Sample Demo Screenshots </b>
 
 1.	Home page: 
 
