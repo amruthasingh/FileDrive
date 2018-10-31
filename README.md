@@ -46,7 +46,7 @@ For example:
 
 4. Install dependencies: 
     
-    pip install -r requirements.txt
+     pip install -r requirements.txt
 
 <b> Sample Demo Screenshots </b>
 
