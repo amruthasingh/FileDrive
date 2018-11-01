@@ -48,6 +48,8 @@ For example:
     
      pip install -r requirements.txt
 
+5. Tested on Google chrome and Safari browsers.
+
 <b> Sample Demo Screenshots </b>
 
 1.	Home page: 
